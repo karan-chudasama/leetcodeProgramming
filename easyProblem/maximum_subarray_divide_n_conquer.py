@@ -21,7 +21,7 @@ class Solution:
         left_max = float("-inf")
         left_high = mid
         left_sum = 0
-        for i in range(mid, low, -1):
+        for i in range(mid, low-1, -1):
             left_sum += nums[i]
             if left_sum > left_max:
                 left_max = left_sum
@@ -30,7 +30,7 @@ class Solution:
         right_max = float("-inf")
         right_high = mid+1
         right_sum = 0
-        for i in range(mid+1, high):
+        for i in range(mid+1, high+1):
             right_sum += nums[i]
             if right_sum > right_max:
                 right_max = right_sum

@@ -1,0 +1,19 @@
+word_key = {}
+
+for key in keywords:
+    for rev in reviews:
+        if key in rev.lower():
+            word_key[key] = word_key.get(key, 0) + 1
+
+
+sorted_key = [(-v, k) for k, v in word_key.items()]
+print(sorted_key)
+
+heapq.heapify(sorted_key)
+print(sorted_key)
+
+ans = []
+for i in range(k):
+    ans.append(heapq.heappop(sorted_key)[1])
+
+ans
